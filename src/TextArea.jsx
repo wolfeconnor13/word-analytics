@@ -7,12 +7,16 @@ export default function TextArea() {
 
   const handleChange = (e) => {
     let newText = e.target.value;
+
+    // basic validation
     if (newText.includes("<script>")) {
       setWarningText("Scripts are not allowed!");
       newText = newText.replace("<script>", "");
     } else if (newText.includes("@")) {
       setWarningText("The '@' character is not allowed!");
       newText = newText.replace("@", "");
+    } else {
+      setWarningText("");
     }
     setText(newText);
   };
