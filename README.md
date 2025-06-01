@@ -16,3 +16,9 @@ The textarea was initially uncontrolled, but by implementing useState we're able
 ## Derived state
 
 warningText is a state we were managing to alert the user when they were attempting to input something we didn't want in the textarea. Initially we used a boolean state to manage whether we wanted the warning message to display or not, but we can use derived state and truthy values to actually just use warningText. If we have a non-empty string in warningText then we have some error we want to display and we can use that string in the ternary expression.
+
+Note: Derived state can also be called computed state. It's best used when you having existing states that are closely related, take a look and see if you can derive the state instead of using useState.
+
+## Lifting State
+
+Again in this project we lifted state from the TextArea component to the Container component so that the text from the text area could be used in calculations in the Stats component.
